@@ -105,7 +105,7 @@ directory = os.curdir
 must_save_options = False
 
 # 20110310 Hostname for links
-hostname_pb = "piratebox.lan"
+hostname_pb = "df.lan"
 
 ## User supplied subdirectory stuff
 userdirs= False # disabled by default, overridden by command line

@@ -75,8 +75,8 @@ generate_dnsmasq() {
    lease_line="$net.$lease_start,$net.$lease_end,$lease_time"
    echo  "dhcp-range=$lease_line"      >> $DNSMASQ_CONFIG
    #redirect every dns
-   # dns_redirect="/#/$net.$ip_pb"
-   dns_redirect="/exmosis.lan/$net.$ip_pb"
+   dns_redirect="/#/$net.$ip_pb"
+   # dns_redirect="/exmosis.lan/$net.$ip_pb"
    echo "address=$dns_redirect"        >> $DNSMASQ_CONFIG
    echo "dhcp-leasefile=$LEASE_FILE"   >> $DNSMASQ_CONFIG
 
