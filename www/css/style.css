@@ -1,0 +1,223 @@
+* {margin: 0; padding: 0;}
+
+body {
+	text-align: left; 
+	font-size: 1.0em;
+	font-family: sans-serif;
+}
+
+.box {
+	padding-top: 10px; 
+	padding-bottom: 0px;
+}
+
+#message {
+	text-align: left; 
+	width: 310px;
+}
+
+#sending {display: none;}
+#wrapform {height: 40px;}
+#progress {display: inline;  border-collapse: separate; empty-cells: show;
+           border-spacing: 10px 0; padding: 0; vertical-align: bottom;}
+#progress td {height: 10px; width: 13px; background-color: #eee;
+              border: 1px solid #aaa; padding: 0px;}
+
+#station {font-size: 50%; }
+
+
+.shoutbox_content {
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   margin-top:   1%;
+   position:   relative;
+   text-align: left;
+   width: 50%;
+   min-height:  50px;
+   height:      25%;
+   max-height:  300px;
+   overflow: hidden;
+}
+
+
+
+date            { font-size: 10pt; color: #666666; font-family:Tahoma }
+name        { font-weight: bold; font-family:Tahoma }
+data            { font-family: Tahoma }
+data.def        { color: #000000 }
+data.blue       { color: #0000FF }
+data.green      { color: #008000 }
+data.orange     { color: #FF8040 }
+data.red        { color: #FF0000 }
+
+
+/* Communifi */
+
+input[type="submit"],
+input[type="button"] {
+	background-color: #eee;
+	border: 1px solid #000;
+	padding: 5px;
+}
+
+#welcome {
+	float: left;
+	margin-left: 20px;
+	width: 25%;
+}
+
+#message {
+	float: left;
+	clear: left;
+	margin-top: 1em;
+	margin-left: 20px;
+}
+#message ul,
+#message ul li {
+	list-style-type: none;
+	margin: 0
+	padding: 0;
+}
+#message ul {
+	margin-top: 1em;
+}
+#message ul li {
+	margin-left: 10px;
+	margin-bottom: 0.2em;
+}
+#message ul li a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #9999cc;
+}
+#message ul li a:hover {
+	text-decoration: underline;
+}
+
+#upload_pane {
+	position: absolute;
+	top: 20px;
+	left: 25%;
+	right: 25%;
+	height: 150px;
+	border: 0px solid #666;
+}
+
+/* Droopy form styling */
+
+#files_pane {
+	position: absolute;
+	top: 200px;
+	left: 25%;
+	right: 25%;
+	height: 500px;
+	border: 1px solid #666;
+}
+#files_pane_frame {
+	width: 100%;
+	height: 100%;
+}
+
+/* Droopy styling */
+#wrapform {
+	float: left;
+	width: 100%;
+}
+
+#wrapform #form {
+	width: 500px;
+	margin-left: 15%;
+}
+
+/* 1. Hide upload form */
+/*
+#wrapform #form form {
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+*/
+/* 2. Styling for jquery-inserted div makes it into a button */
+#wrapform #fake_file_chooser {
+	width: 100%;
+}
+#wrapform #form #choose_file_fake_button,
+#wrapform #form #submit_file_fake_button {
+	float: left;
+	border: 2px solid #ccc;
+	width: 200px;
+	height: 85px;
+	margin-left: 0px;
+	text-align: center;
+	padding-top: 15px;
+	cursor: pointer;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	background-color: #ccccff;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#ffffff'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #ccc,  #fff); /* for firefox 3.6+ */
+}
+#wrapform #form #choose_file_fake_button {
+	margin-right: 50px;
+}
+
+#chat_pane {
+	float: right; 
+	position: absolute; 
+	right: 0; 
+	top: 0; 
+	bottom: 0; 
+	width: 22%; 
+	border-left: 1px solid black;
+}
+#chat_pane_post {
+	margin-bottom: 20px;
+}
+.chat_field {
+	float: left;
+	width: 90%;
+	clear: both;
+	margin: 10px 10px 0;
+}
+.chat_field label {
+	float: left;
+	width: 80px;
+}
+
+/** Colour picking, Brit style **/
+ul#chat_field_colours,
+ul#chat_field_colours li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul#chat_field_colours li {
+	float: left;
+	margin-right: 20px;
+}
+ul#chat_field_colours li.blue {
+	color: blue;
+}
+ul#chat_field_colours li.green {
+	color: green;
+}
+ul#chat_field_colours li.orange {
+	color: orange;
+}
+ul#chat_field_colours li.red {
+	color: red;
+}
+
+input#chat_field_submit {
+	float: right;
+	margin-right: 10px;
+}
+
+#shoutbox {
+	float: left;
+	width: 96%;
+	height: 100%;
+	margin: 20px 2% 0;
+}
+
