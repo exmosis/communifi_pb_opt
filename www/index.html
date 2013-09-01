@@ -23,16 +23,18 @@
 	Contact our roving blogger for more info</h3>
 -->
 
-<div class="container">
-    <div class="row">
-            <img class="img-responsive" src="img/BDF_logo_small.png"/>
+<div class="container row-fluid">
+    <div class="row span12">
+            <img class="img-responsive" src="bdf_logo_small.png"/>
             <h1>Communifi</h1>
+            <p class="lead">Share your experience</p>
     </div>
     <p class="lead">We are collecting photos, videos, music and comments from any BDF events.</p>
-    <p class="lead">Please upload material here.</p>
+    <p class="lead">Please upload and browse material below.</p>
+    <p class="lead">Files will be shown and distributed from The Dream Factory hangout space <a href="http://www.thedreamfactory.net/">www.thedreamfactory.net</a>.</p>
 
 	<!-- Bring in Droopy upload form -->
-	<div id="upload_pane">
+	<div id="upload_pane" class="span12">
 		<iframe width='650' frameBorder='0' src='http://df.lan:8080' id="upload_pane_frame">
 			Your browser does not supprt Iframes.. If you want to upload something, follow this <a href='http://df.lan:8080'>Link</a>
 		</iframe>
@@ -48,6 +50,12 @@
             <button type="submit" class="btn btn-default">Upload</button>
         </fieldset>
     </form -->
+    
+    <div id="files_pane" class="span12">
+    	<iframe id="files_pane_frame" frameBorder="0" src="/Shared" width="100%">
+    		<a href="/Shared/">Click here to see files uploaded so far</a>
+    	</iframe>
+    </div>
 </div>  
 
 <!-- JavaScript plugins (requires jQuery) -->
