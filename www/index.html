@@ -1,84 +1,19 @@
+<!DOCTYPE html>
 <html>
 <head>
+<title>Brighton Digital Festival - Communifi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="cache-control" content="no-cache">
-<LINK rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <title>BDFBox 2</title>
-
-	<link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
-
-<!--piratebox.lan-->
-
-<script type="text/javascript" src="jquery.min.js"></script>
-
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script type="text/javascript">
-    $(document).ready(function() {
-           // do stuff when DOM is ready
-	   $.get('forum.html', function(data) {
-	          $('div#forum_link').html(data);
-	         } );
-	   $.get('forban_link.html', function(data) {
-	          $('div#forban_link').html(data);
-	         } );
-
-	   $.get('station_cnt.txt', function(data) {
-	          $('div#station').html(data);
-	         } );
-       $('div#shoutbox').ajaxError(function() {
-                 $(this).text( "Triggered ajaxError handler on shoutbox" );
-               });
-
-       $("#sb_form").submit(function(event) {
-
-		     /* stop form from submitting normally */
-	         event.preventDefault();
-		     post_shoutbox();
-
-            });
-       display_shoutbox();
-   });
-
-  function refresh_shoutbox () {
-          $.get('/chat_content.html', function(data) {
-                       $('div#shoutbox').html(data);
-                   } );
-  }
-  function refresh_time_sb () {
-     // Refresh rate in milli seconds
-     mytime=setTimeout('display_shoutbox()', 10000);
-
-  }
-
-  function post_shoutbox () {
-     $.post("/cgi-bin/psowrte.py" , $("#sb_form").serialize())
-           .success(function() { refresh_shoutbox(); });
-     $('#sb_form_text').val("");
-  }
-
-
-  function display_shoutbox() {
-     refresh_shoutbox();
-     refresh_time_sb();
-  }
-
   function fnGetDomain(url) {
      return url.match(/:\/\/(.[^/]+)/)[1];
   }
-
 </script>
-
 </head>
 <body>
 
-<!-- Title & Logo -->
-<div id="welcome" class="box">
-	<!-- img src="/piratebox-logo-small.png"/ -->
-	<img src="/cb_logo.jpg" width="200" />
-	<h1>BDF Box</h1>	
-	<h2>Share your experience!</h2>	
-</div>
-
-<!-- Intro message -->
-<div id="message" class="box">
+<!--
 	<h3>Upload pictures, videos and sounds<br />&nbsp;</h3>
 	<h3>Browse other people's uploads</h3>
 	<h5>(Hint: search for our media server on your phone)</h5>
@@ -86,69 +21,41 @@
 	Chat with others in the same space</h3>
 	<h3>&nbsp;<br />
 	Contact our roving blogger for more info</h3>
-	<!-- 
-	<h3>Learn more</h3>
-	<ul>
-		<li><a href="/.READ.ME.htm" target="_blank">Start here</a></li>
-		<li><a href="" target="_blank">What is the Communifi project?</a></li>
-		<li><a href="" target="_blank">What is a Piratebox?</a></li>
-		<li><a href="" target="_blank">Get involved</a></li>
-	</ul>
-	-->
-	<!-- 
-	<div id="forum_link"></div>
-	<div id="forban_link"></div>
-	-->
-</div>
+-->
 
-<!-- Bring in Droopy upload form -->
-<div id="upload_pane">
-	<iframe width='650' frameBorder='0' src='http://df.lan:8080' id="upload_pane_frame">
-		Your browser does not supprt Iframes.. If you want to upload something, follow this <a href='http://piratebox.lan:8080'>Link</a>
-	</iframe>
-</div>
+<div class="container">
+    <div class="row">
+            <img class="img-responsive" src="img/BDF_logo_small.png"/>
+            <h1>Communifi</h1>
+    </div>
+    <p class="lead">We are collecting photos, videos, music and comments from any BDF events.</p>
+    <p class="lead">Please upload material here.</p>
 
-<!-- Show uploaded files for now -->
-<div id="files_pane">
-	<iframe id="files_pane_frame" frameBorder="0" src="/Shared">
-		<a href="/Shared/">Click here to see files uploaded so far</a>
-	</iframe>
-</div>
-
-<!-- Chat pannel -->
-<div id="chat_pane">
-
-	<div id="chat_pane_post">
-		<form method="POST" name="psowrte" id="sb_form" >
-		<span id="chat_field_name" class="chat_field">
-			<label for="name" class="chat_field_label">Name:</label>
-			<input type="text" value="anonymous" name="name" size="10">
-		</span>
-		<span id="chat_field_message" class="chat_field">
-			<label for="data" class="chat_field_label">Message:</label>
-			<input type="text" name="data" size="20" id='sb_form_text'>
-		</span>
-		<!-- TODO: Install color picker here -->
-		<span id="chat_field_color" class="chat_field">
-			<span class="chat_field_label">Color:</span> 
-			<ul id="chat_field_colours">
-				<li class="first default">Default <input type="radio" value="def" name="color" checked></li>
-				<li class="blue">Blue <input type="radio" value="blue" name="color"></li>
-				<li class="green">Green <input type="radio" value="green" name="color"></li>
-				<li class="orange">Orange <input type="radio" value="orange" name="color"></li>
-				<li class="red">Red <input type="radio" value="red" name="color"></li>
-			</ul>
-		</span>
-		<input type="submit" value="Send" name="submit" id="chat_field_submit" /><br>
-		</form>
+	<!-- Bring in Droopy upload form -->
+	<div id="upload_pane">
+		<iframe width='650' frameBorder='0' src='http://df.lan:8080' id="upload_pane_frame">
+			Your browser does not supprt Iframes.. If you want to upload something, follow this <a href='http://df.lan:8080'>Link</a>
+		</iframe>
 	</div>
 
-	<div class="shoutbox_content" id="shoutbox"></div>
+    <!-- form>
+        <fieldset>
+            <legend>Communifi</legend>
+            <div class="form-group">
+                <label for="inputUploadFile">Upload File</label>
+                <input type="file" id="inputUploadFile">
+            </div>
+            <button type="submit" class="btn btn-default">Upload</button>
+        </fieldset>
+    </form -->
+</div>  
 
-	<!-- What's this? -->
-	<div id="station"></div>
+<!-- JavaScript plugins (requires jQuery) -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
 
-</div>
-
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<!-- <script src="js/respond.js"></script> -->
 </body>
 </html>
